@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+
+  div
+    span(class='large')
+      div(class='thumbnail loading' style='background-image:url("' + thumbnail + '")')
+        img(class='image' src=baselineImageSrc)
+        div(class='loader')
+    span(class='large')
+      div(class='thumbnail loading' style='background-image:url("' + thumbnail + '")')
+        img(class='image' src=progressiveImageSrc)
+        div(class='loader')
+
