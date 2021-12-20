@@ -3,6 +3,13 @@ extends layout
 block content
   h1= title
   p= message
+
+  p
+    a(href='/demo') Progressive Load Demo
+  p
+    a(href='/lazy') Lazy Load Demo
+  p
+    a(href='/compare') Image Resize Comparison
   
   form(method='POST' enctype='multipart/form-data')
     p

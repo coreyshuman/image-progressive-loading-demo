@@ -1,17 +1,19 @@
 extends layout
 
 block content
+  h1= title
+  p Enable 3G throttling in your developer tools (Network tab) and refresh the page. 
 
   div
     span(class='large')
-      div(class='thumbnail' style='background-image:url("' + thumbnail + '")')
+      div(class='thumbnail loading' style='background-image:url("' + thumbnail + '")')
         img(class='image' src=baselineImageSrc)
         div(class='loader')
     span(class='large')
-      div(class='thumbnail' style='background-image:url("' + thumbnail + '")')
+      div(class='thumbnail loading' style='background-image:url("' + thumbnail + '")')
         img(class='image' src=progressiveImageSrc)
         div(class='loader')
-  div
+  div(style='display:none;')
     p(class='attribution') 
       | Photo By
       |

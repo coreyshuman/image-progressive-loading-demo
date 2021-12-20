@@ -4,15 +4,21 @@ body {
 }
 
 a {
-  color: #00b7ff;
+  color: #052f3f;
 }
 
 img {
   width: 400px;
 }
 
+form {
+  border: 1px solid black;
+  padding: 1em;
+}
+
 div.thumbnail {
   background-size: 100% 100%;
+  min-height: 260px;
 }
 
 div.thumbnail.loading {
@@ -22,6 +28,7 @@ div.thumbnail.loading {
 div span {
   display: inline-block;
   width: 400px;
+  min-height: 300px;
   margin: 10px;
   font-size: 0.8em;
 }

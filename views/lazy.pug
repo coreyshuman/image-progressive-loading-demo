@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1= title
+
+  - var rows = 20;
+
+  while rows-- > 0
+    - var cols = 3;
+    div
+      while cols-- > 0
+        if useLazy
+          span
+            div(class='thumbnail loading' style='background-image:url("' + thumbnail + '")')
+              img(class='image' alt='test image' src='/lazy/image?t='+rows+cols loading='lazy' width=400)
+              div(class='loader')
+        else
+          span
+            img(src='/lazy/image?t='+rows+cols alt='test image' width=400)
+
+      
+  div
+    p(class='attribution') 
+      | Photo By
+      |
+      a(href='https://unsplash.com/@huguesdb?utm_source=coreyshuman-image-progressive-loading-demo&utm_medium=referral') Hugues de BUYER-MIMEURE
+      |
+      | on
+      |
+      a(href='https://unsplash.com/?utm_source=coreyshuman-image-progressive-loading-demo&utm_medium=referral') Unsplash

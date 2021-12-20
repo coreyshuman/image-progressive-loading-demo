@@ -61,7 +61,7 @@ router.get("/progressive-image", async function (req, res, next) {
 
   var image = await sharp(imageBufferOrPath);
   var data = await image
-    .resize(700)
+    .resize(1000)
     .toFormat("jpeg", {
       quality: 100,
       progressive: true,
@@ -92,7 +92,7 @@ router.get("/baseline-image", async function (req, res, next) {
 
   var image = await sharp(imageBufferOrPath);
   var data = await image
-    .resize(700)
+    .resize(1000)
     .toFormat("jpeg", {
       quality: 100,
       progressive: false,
