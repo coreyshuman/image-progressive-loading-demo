@@ -4,10 +4,12 @@ var sharp = require("sharp");
 var path = require("path");
 const axios = require("axios");
 
+const imageName = "hugues-de-buyer-mimeure-lQPEChtLjUo-unsplash.jpg";
+
 /* GET home page. */
 router.get("/", async function (req, res, next) {
   var imageBufferOrPath =
-    path.join(__dirname, "../public/images") + "/large2.jpg";
+    path.join(__dirname, "../public/images/") + imageName;
 
   if (req.query.imageUrl) {
     const axiosRequest = await axios.get(req.query.imageUrl, {
@@ -48,7 +50,7 @@ router.get("/progressive-image", async function (req, res, next) {
   const filename = "progressive.jpg";
 
   var imageBufferOrPath =
-    path.join(__dirname, "../public/images") + "/large2.jpg";
+    path.join(__dirname, "../public/images/") + imageName;
 
   if (req.query.imageUrl) {
     const axiosRequest = await axios.get(req.query.imageUrl, {
@@ -79,7 +81,7 @@ router.get("/baseline-image", async function (req, res, next) {
   const filename = "baseline.jpg";
 
   var imageBufferOrPath =
-    path.join(__dirname, "../public/images") + "/large2.jpg";
+    path.join(__dirname, "../public/images/") + imageName;
 
   if (req.query.imageUrl) {
     const axiosRequest = await axios.get(req.query.imageUrl, {

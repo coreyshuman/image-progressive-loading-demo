@@ -53,6 +53,11 @@ p {
   font-size: 1em;
 }
 
+p.attribution {
+  font-size: .75em;
+  font-style: italic;
+}
+
 div.loading div.loader {
   border: 0.3em solid rgba(255, 255, 255, 0.8);
   /* 3/4 spinner */

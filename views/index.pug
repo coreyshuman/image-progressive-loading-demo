@@ -5,11 +5,9 @@ block content
 
   div
     span
-      img(src='./images/landscape.jpeg')
+      img(src=fullImage)
     span
       img(src=medImage)
-    span
-      img(src=smImage)
 
 
   div
@@ -31,4 +29,13 @@ block content
           img(src=format.outputImage class='image')
           p #{format.outputSize} KB
           p(class='small')= format.string
-          
+      
+  div
+    p(class='attribution') 
+      | Photo By
+      |
+      a(href='https://unsplash.com/@huguesdb?utm_source=coreyshuman-image-progressive-loading-demo&utm_medium=referral') Hugues de BUYER-MIMEURE
+      |
+      | on
+      |
+      a(href='https://unsplash.com/?utm_source=coreyshuman-image-progressive-loading-demo&utm_medium=referral') Unsplash

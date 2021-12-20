@@ -3,7 +3,9 @@ var router = express.Router();
 var sharp = require("sharp");
 var path = require("path");
 
-var configs = [{
+const imageName = "hugues-de-buyer-mimeure-lQPEChtLjUo-unsplash-small.jpg";
+
+const configs = [{
     type: "png",
     size: 20,
     formats: [{
@@ -57,7 +59,7 @@ var configs = [{
 
 /* GET home page. */
 router.get("/", async function (req, res, next) {
-  var imagePath = path.join(__dirname, "../public/images") + "/landscape.jpeg";
+  var imagePath = path.join(__dirname, "../public/images/") + imageName;
   var fs = require("fs");
   var {
     size
@@ -77,6 +79,7 @@ router.get("/", async function (req, res, next) {
 
   for (configIdx = 0; configIdx < configs.length; configIdx++) {
     var currentConfig = configs[configIdx];
+    
     for (formatIdx = 0; formatIdx < currentConfig.formats.length; formatIdx++) {
       var currentFormat = currentConfig.formats[formatIdx];
       var outputImage = await image
@@ -88,7 +91,9 @@ router.get("/", async function (req, res, next) {
       outputImage =
         `data:image/${currentConfig.type};base64,` +
         outputImage.toString("base64");
-      currentFormat.string = JSON.stringify(currentFormat);
+      
+      if(!currentFormat.string)
+        currentFormat.string = JSON.stringify(currentFormat);
       currentFormat.outputImage = outputImage;
       currentFormat.outputSize = outputSize;
     }
@@ -100,6 +105,7 @@ router.get("/", async function (req, res, next) {
   res.render("index", {
     title: "Image Resizer",
     size,
+    fullImage: `/images/${imageName}`,
     medImage,
     medImageSize,
     configs,

@@ -1,15 +1,22 @@
 extends layout
 
 block content
-  h1= title
 
   div
     span(class='large')
-      div(class='thumbnail loading' style='background-image:url("' + thumbnail + '")')
+      div(class='thumbnail' style='background-image:url("' + thumbnail + '")')
         img(class='image' src=baselineImageSrc)
         div(class='loader')
     span(class='large')
-      div(class='thumbnail loading' style='background-image:url("' + thumbnail + '")')
+      div(class='thumbnail' style='background-image:url("' + thumbnail + '")')
         img(class='image' src=progressiveImageSrc)
         div(class='loader')
-
+  div
+    p(class='attribution') 
+      | Photo By
+      |
+      a(href='https://unsplash.com/@huguesdb?utm_source=coreyshuman-image-progressive-loading-demo&utm_medium=referral') Hugues de BUYER-MIMEURE
+      |
+      | on
+      |
+      a(href='https://unsplash.com/?utm_source=coreyshuman-image-progressive-loading-demo&utm_medium=referral') Unsplash
