@@ -2,40 +2,28 @@ extends layout
 
 block content
   h1= title
+  p= message
+  
+  form(method='POST' enctype='multipart/form-data')
+    p
+      label(for='imageupload') Upload Image 
+      input(type='file', name='imageupload')
+    p
+      label(for='width') Width 
+      input(type='number', name='width', value=20)
+    p
+      label(for='width') Quality % 
+      select(name='quality')
+        option 10
+        option 20
+        option 30
+        option 40
+        option(selected='selected') 50
+        option 60
+        option 70
+        option 80
+        option 90
+        option 100
+    p
+      input(type='submit', name='submitForm', value='Convert')
 
-  div
-    span
-      img(src=fullImage)
-    span
-      img(src=medImage)
-
-
-  div
-    span Size: #{size} KB
-    span Size: #{medImageSize} KB
-
-  div
-    input(type='checkbox' id='blurCheckbox')
-    span Blur (or press B)
-
-
-  each config in configs
-    div
-      span(class='small')
-        p= config.type
-        p= config.size
-      each format in config.formats
-        span
-          img(src=format.outputImage class='image')
-          p #{format.outputSize} KB
-          p(class='small')= format.string
-      
-  div
-    p(class='attribution') 
-      | Photo By
-      |
-      a(href='https://unsplash.com/@huguesdb?utm_source=coreyshuman-image-progressive-loading-demo&utm_medium=referral') Hugues de BUYER-MIMEURE
-      |
-      | on
-      |
-      a(href='https://unsplash.com/?utm_source=coreyshuman-image-progressive-loading-demo&utm_medium=referral') Unsplash

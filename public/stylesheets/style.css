@@ -34,10 +34,17 @@ span.small {
 
 span.large {
   width: 700px;
+  height: 320px;
+  overflow-wrap: break-word;
 }
 
 span.large img {
   width: 700px;
+}
+
+span textarea {
+  width: 100%;
+  height: 100%;
 }
 
 p.small {

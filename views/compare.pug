@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  h1= title
+
+  div
+    span
+      img(src=fullImage)
+    span
+      img(src=medImage)
+
+
+  div
+    span Size: #{size} KB
+    span Size: #{medImageSize} KB
+
+  div
+    input(type='checkbox' id='blurCheckbox')
+    span Blur (or press B)
+
+
+  each config in configs
+    div
+      span(class='small')
+        p= config.type
+        p= config.size
+      each format in config.formats
+        span
+          img(src=format.outputImage class='image')
+          p #{format.outputSize} KB
+          p(class='small')= format.string
+      
+  div
+    p(class='attribution') 
+      | Photo By
+      |
+      a(href='https://unsplash.com/@huguesdb?utm_source=coreyshuman-image-progressive-loading-demo&utm_medium=referral') Hugues de BUYER-MIMEURE
+      |
+      | on
+      |
+      a(href='https://unsplash.com/?utm_source=coreyshuman-image-progressive-loading-demo&utm_medium=referral') Unsplash
